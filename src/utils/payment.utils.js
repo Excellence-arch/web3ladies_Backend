@@ -7,6 +7,7 @@ const initialize = async (email, amount, currency) => {
     amount: amount * 100,
     reference: reference.toString(),
     currency,
+    callback_url:process.env.FRONTEND_URL
   };
   try {
     const response = await axios.post(`${process.env.PAYSTACK_URL}/initialize`, params, {
